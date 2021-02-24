@@ -1,0 +1,49 @@
+<footer>
+  <div class="footnote">
+    {% if page.license.content or page.license.code %}
+    <p>
+      Except as otherwise noted,
+      {% if page.license.content and page.license.code %}
+
+        {% if page.license.content.name == page.license.code.name %}
+
+        the content and code samples on this page are licensed under <a href="{{ page.license.content.url }}" target="_blank">{{ page.license.content.name }}</a>.
+
+        {% else %}
+
+        the content of this page is licensed under <a href="{{ page.license.content.url }}" target="_blank">{{ page.license.content.name }}</a>, and the code samples are licensed under <a href="{{ page.license.code.url }}" target="_blank">{{ page.license.code.name }}</a>.
+
+        {% endif %}
+
+      {% elsif page.license.content %}
+
+        the content of this page is licensed under <a href="{{ page.license.content.url }}" target="_blank">{{ page.license.content.name }}</a>.
+
+      {% elsif page.license.code %}
+
+        the code samples on this page are licensed under <a href="{{ page.license.code.url }}" target="_blank">{{ page.license.code.name }}</a>.
+
+      {% endif %}
+    </p>
+    {% endif %}
+    <p>
+      Last updated <span id="last-modified"></span>
+    </p>
+  </div>
+
+  <div class="footer">
+    <p><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" /></a></p>
+    <div class="text-left">
+      {% include nav_social.html %}
+    </div>
+    {% include nav_footer.html %}
+    <hr class="mdc-list-divider" />
+    <span class="copyright">
+      <p>
+        &copy; {{ site.data.manifest.name }} {{ site.time | date: '%Y' }}. All rights reserved.<br>
+        <small>This site uses the <a href="https://github.com/saifkhichi96/simple-material">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
+      </p>
+      <a href="{{ site.baseurl }}{{ site.terms }}" class="muted">Terms</a> &nbsp;|&nbsp; <a href="{{ site.baseurl }}{{ site.privacy }}" class="muted">Privacy</a>
+    </span>
+  </div>
+</footer>

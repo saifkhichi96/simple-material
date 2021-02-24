@@ -1,0 +1,26 @@
+{% if page.title %}
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="twitter:title" content="{{ page.title }}" />
+{% endif %}
+
+{% assign keywords = {{ site.data.manifest.categories | join: ',' }} %}
+
+{% if page.keywords %}
+{% assign keywords = keywords | append: ',' | append: page.keywords %}
+{% endif %}
+
+{% if page.categories %}
+{% assign keywords = keywords | append: ',' | append: page.categories | join: ',' %}
+{% endif %}
+
+<meta name="keywords" content="{{ keywords }}">
+<meta property="og:keywords" content="{{ keywords }}" />
+<meta property="twitter:keywords" content="{{ keywords }}" />
+
+{% if page.icon %}
+<meta property="og:image" content="{{ site.baseurl }}{{ page.icon }}" />
+<meta property="twitter:image" content="{{ site.baseurl }}{{ page.icon }}" />
+{% else %}
+<meta property="og:image" content="{{ site.baseurl }}{{ site.logo }}" />
+<meta property="twitter:image" content="{{ site.baseurl }}{{ site.logo }}" />
+{% endif %}

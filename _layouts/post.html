@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<style>
+    article img {
+      border-radius: 8px;
+      width: 100%;
+      margin: auto;
+    }
+</style>
+
+<!-- Page Content -->
+<div class="col-md-8">
+  {% if page.toc %}
+  <section>
+    <h2>Table of Contents</h2>
+    {{ content | toc_only }}
+  </section>
+
+  <script type="text/javascript">
+    findElementById("toc").addClass("mdc-list-item__text");
+  </script>
+  {% endif %}
+
+  <section>
+    {{ content | inject_anchors }}
+  </section>
+</div>
+
+<aside class="col-md-4">
+  <section>
+    {% include widget_search.html %}
+
+    <h2>Recent posts</h2>
+    {% include list_posts.html %}
+  </section>
+
+  {% include disqus.html %}
+</aside>

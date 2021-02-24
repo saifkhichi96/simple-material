@@ -1,0 +1,13 @@
+<section class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    {% for service in site.services %}
+    <div class="mdc-layout-grid__cell mdc-card mdc-card--outlined service-item">
+      {% if service.icon %}
+      <span class="material-icons">{{ service.icon }}</span>
+      {% endif %}
+      <h2><a href="{{ site.baseurl }}{{ service.url }}">{{ service.title }}</a></h2>
+      <p>{{ service.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{% if site.github %}
+<section class="mdc-card mdc-card--outlined">
+  <div class="mdc-card__content">
+    <p>
+      This page is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> on GitHub{% if site.github.license.name %} under the {{ site.github.license.name }}{% endif %}.
+    </p>
+    {% unless site.github.private %}
+    <p>
+      Is there a problem? You can <a href="{{ site.github.issues_url }}" target="
+      ">submit an issue</a> or help us <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}" target="_blank">improve this page</a>.
+    </p>
+    {% endunless %}
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,28 @@
+{% if site.menu_social.github %}
+<section class="mdc-card mdc-card--outlined">
+  <div class="mdc-card__content">
+    <h2>Coding Stats</h2>
+    <p>
+      Summary of my recent activity on GitHub where I contribute to open-source projects and manage my workflow.
+    </p>
+    <div class="calendar"></div>
+  </div>
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-icons">
+      <a class="mdc-button mdc-card__action mdc-card__action--button" href="https://github.com/{{ site.menu_social.github }}/">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Visit my profile</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script type="application/javascript">
+  (function() {
+    // Load GitHub contributions calendar
+    new GitHubCalendar(".calendar", "{{ site.menu_social.github }}", {
+      responsive: true
+    });
+  })();
+</script>
+{% endif %}

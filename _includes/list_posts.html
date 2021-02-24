@@ -1,0 +1,17 @@
+<div class="mdc-list mdc-list--two-line">
+  {% assign posts = site.posts %}
+  {% for post in posts limit:5 %}
+  {% assign categories = post.categories %}
+  <a class="mdc-list-item" href="{{ site.baseurl }}{{ post.url }}">
+    <span class="mdc-list-item__ripple"></span>
+    <span class="mdc-list-item__text">
+      <span class="mdc-list-item__primary-text">{{ post.title }}</span>
+      <span class="mdc-list-item__secondary-text">
+        {% for cat in categories limit:1 %}
+        <span class="project-tag">{{ cat }}</span>
+        {% endfor %}
+        &nbsp; {{ post.date | date: "%B %e, %Y" }}</span>
+    </span>
+  </a>
+  {% endfor %}
+</div>

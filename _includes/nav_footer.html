@@ -1,0 +1,23 @@
+{% if site.navigation_footer %}
+{% if site.menu_main %}
+<nav>
+  <ul class="sitemap">
+    {% for item in site.menu_main %}
+
+    {% if item.url contains '://' %}
+    {% assign url = item.url %}
+    {% else %}
+    {% assign url = item.url | relative_url %}
+    {% endif %}
+
+    {% if item.title %}
+    <li>
+      <a class="muted" href="{{ url }}">{{ item.title }}</a>
+    </li>
+    {% endif %}
+
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endif %}

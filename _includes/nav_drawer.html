@@ -1,0 +1,32 @@
+{% if site.menu_main %}
+<nav>
+  <ul class="mdc-list mdc-list--icon-list">
+    {% for item in site.menu_main %}
+    {% if item.url contains '://' %}
+    {% assign url = item.url %}
+    {% else %}
+    {% assign url = item.url | relative_url %}
+    {% endif %}
+
+    {% if item.url == page.url %}
+    <li class="mdc-list-item mdc-list-item--activated" aria-current="page">
+    {% else %}
+    <li class="mdc-list-item" {% if item.url %}onclick="window.location.href='{{ url }}'"{% endif %}>
+    {% endif %}
+      {% if item.title %}
+      <span class="mdc-list-item__ripple"></span>
+      <span class="mdc-list-item__text">
+        <i class="material-icons" style="opacity: 0.75; position: relative; top: 6px;">{{ item.icon }}</i>
+        {{ item.title }}
+      </span>
+      {% endif %}
+    </li>
+
+    {% endfor %}
+    <li class="mdc-list-item mdc-list-item--activated" style="opacity: 0;">
+      <span class="mdc-list-item__ripple"></span>
+      <span class="mdc-list-item__text"></span>
+    </li>
+  </ul>
+</nav>
+{% endif %}

@@ -1,0 +1,211 @@
+
+# ============================================================================
+# The following sections contain configuration flags to customize your site
+# ============================================================================
+# 1. Required Metadata
+# 2. Optional Metadata
+# 3. Licensing
+# 4. Site Navigation
+# ============================================================================
+
+
+# ----------------------------------------------------------------------------
+# 1. Required Metadata (all fields mandatory)
+# ----------------------------------------------------------------------------
+
+# Path of your site logo (this is displayed in the top app bar and the footer.)
+logo:                      /assets/images/logo.png
+
+# If you're hosting your GitHub pages site at your User repository
+# (http://yourusername.github.io), leave baseurl empty: "", OR if you're hosting
+# it at a Project repo instead (http://yourusername.github.io/repository-name)
+# then set the baseurl to: "/repository-name"
+baseurl:                   ""
+
+# Your website URL (e.g. http://yourusername.github.io or http://www.domain.com)
+# Used for Sitemap.xml and your RSS feed
+url:                       http://www.saifkhichi.com/simple-material/
+enforce_ssl:               https://www.saifkhichi.com/simple-material/
+
+# ----------------------------------------------------------------------------
+# 1. Optional Metadata (optional, can remove or leave fields empty)
+# ----------------------------------------------------------------------------
+
+
+
+# ----------------------------------------------------------------------------
+# 3. Licensing (optional, can remove or leave fields empty)
+# ----------------------------------------------------------------------------
+
+# Adds license declarations on all pages of the site.
+defaults:
+  - scope:
+      path: ''
+    values:
+      # To add different licenses on each page, set the following tags in the
+      # page's frontmatter instead.
+      license:
+        # Declares a license for the site content (excluding source code).
+        content:
+          name: 'Creative Commons Attribution 4.0 International'
+          url: https://creativecommons.org/licenses/by/4.0/
+
+        # Declares a license for the source code samples on the site.
+        code:
+          name: MIT License
+          url: https://opensource.org/licenses/MIT
+
+
+# For showing Twitter cards
+twitter:
+  username: saifkhichi96
+  card: summary
+
+# For specifying social profiles
+social:
+  name: Muhammad Saif Ullah Khan
+  links:
+    - https://twitter.com/saifkhichi96
+    - https://www.linkedin.com/in/saifkhichi96
+    - https://github.com/saifkhichi96
+
+# For verifying ownership via Google Search Console (https://cloud.google.com/identity/docs/verify-domain-web)
+# google_site_verification:
+
+
+# ----------------------------------------------------------------------------
+# 4. Site Navigation (optional, can remove or leave fileds empty)
+# ----------------------------------------------------------------------------
+
+# Includes links in the sidebar (use icon names from https://material.io/icons/)
+# This navigation menu will usually list the top-level pages of the site. If not
+# specified, the website won't have a sidebar.
+menu_main:
+- title:                   Home
+  icon:                    roofing
+  url:                     /
+- title:                   About
+  icon:                    face
+  url:                     /about/
+- title:                   Portfolio
+  icon:                    cases
+  url:                     /portfolio/
+- title:                   Services
+  icon:                    design_services
+  url:                     /services/
+- title:                   # empty item adds a small divider in list
+- title:                   Contact
+  icon:                    # this item does not have an icon
+  url:                     /contact/
+
+# Includes the menu_main links in the footer as well
+navigation_footer:         true
+
+# Shows breadcrubms on each page
+breadcrubms:               true
+
+# Includes an icon in the footer for each username you enter
+menu_social:
+  dribbble:
+  email:                   saifkhichi96@gmail.com
+  facebook:
+  flickr:
+  github:                  saifkhichi96
+  instagram:               saifkhichi96
+  linkedin:                saifkhichi96
+  pinterest:
+  twitter:                 saifkhichi96
+  stackoverflow:           4690466
+  youtube:                 /channel/UCj4yPuKHi9pZ9WbKbfh5MEQ
+  playconsole:             7722501168179136426
+
+# Includes links to your site's privacy policy and terms of service in the footer
+privacy:                   "/privacy/"
+terms:                     "/tos/"
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      toc: true
+
+# _config.yml
+toc:
+  min_level: 2
+  max_level: 5
+  ordered_list: false
+  list_id: toc
+  list_class: mdc-list
+  sublist_class: ''
+  item_class: mdc-list-item
+  item_prefix: toc-
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:                    saifkhichi
+
+# Enter your Google AdSense ad client code (e.g. ca-pub-XXXXXXXXXXXXXXXX) to activate Ads
+google_adsense:            ca-pub-6293532072634065
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+# google_analytics:        UA-43339302-11
+
+# For newer "GA4" analytics, use the following instead of the "UA" entry above
+# google_analytics_ga4:    G-GABC1DEFG
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#
+
+permalink:                 /:title/
+
+# The release of Jekyll Now that you're using
+version:                   v1.0.0
+
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input:                   GFM
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style:                   :compressed # You might prefer not to minify using :expanded
+
+# Use the following plug-ins
+plugins:
+  - jekyll-feed     # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-paginate-v2
+  - jekyll-seo-tag
+  - jekyll-sitemap  # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-toc
+
+include:                   ['_pages']
+
+collections:
+  projects:
+    output:                true
+    permalink:             /projects/:path/
+  services:
+    output:                true
+    permalink:             /services/:path/
+
+pagination:
+  enabled:                 true
+  per_page:                10
+  permalink:               /:num/
+  sort_reverse:            true
+  sort_field:              'date'
+  title:                   ':title'
+  trail:
+    before:                2
+    after:                 2
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
