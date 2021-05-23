@@ -1,5 +1,0 @@
----
-permalink: /manifest.json
----
-
-{{ site.data.manifest | replace: '=>', ': ' }}

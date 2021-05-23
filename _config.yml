@@ -6,6 +6,11 @@
 # 2. Optional Metadata
 # 3. Licensing
 # 4. Site Navigation
+# 5. Blog Posts
+#    5.1. Disqus Comments
+#    5.2. Table of Contents
+# 6. Advertising and Analytics
+# 8. Domain Verification
 # ============================================================================
 
 
@@ -14,13 +19,13 @@
 # ----------------------------------------------------------------------------
 
 # Path of your site logo (this is displayed in the top app bar and the footer.)
-logo:                      /assets/images/logo.png
+logo:
 
 # If you're hosting your GitHub pages site at your User repository
-# (http://yourusername.github.io), leave baseurl empty: "", OR if you're hosting
+# (http://yourusername.github.io), leave baseurl empty: '', OR if you're hosting
 # it at a Project repo instead (http://yourusername.github.io/repository-name)
-# then set the baseurl to: "/repository-name"
-baseurl:                   ""
+# then set the baseurl to: '/repository-name'
+baseurl:                   ''
 
 # Your website URL (e.g. http://yourusername.github.io or http://www.domain.com)
 # Used for Sitemap.xml and your RSS feed
@@ -54,23 +59,6 @@ defaults:
         code:
           name: MIT License
           url: https://opensource.org/licenses/MIT
-
-
-# For showing Twitter cards
-twitter:
-  username: saifkhichi96
-  card: summary
-
-# For specifying social profiles
-social:
-  name: Muhammad Saif Ullah Khan
-  links:
-    - https://twitter.com/saifkhichi96
-    - https://www.linkedin.com/in/saifkhichi96
-    - https://github.com/saifkhichi96
-
-# For verifying ownership via Google Search Console (https://cloud.google.com/identity/docs/verify-domain-web)
-# google_site_verification:
 
 
 # ----------------------------------------------------------------------------
@@ -120,17 +108,22 @@ menu_social:
   playconsole:             7722501168179136426
 
 # Includes links to your site's privacy policy and terms of service in the footer
-privacy:                   "/privacy/"
-terms:                     "/tos/"
+privacy:                   '/privacy/'
+terms:                     '/tos/'
 
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      toc: true
 
-# _config.yml
+# ----------------------------------------------------------------------------
+# 5. Blog Posts (optional, can remove or leave fileds empty)
+# ----------------------------------------------------------------------------
+
+# 5.1. Disqus Comments
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:
+
+# 5.2. Table of Contents
+
 toc:
   min_level: 2
   max_level: 5
@@ -141,22 +134,69 @@ toc:
   item_class: mdc-list-item
   item_prefix: toc-
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus:                    saifkhichi
+defaults:
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      toc: true
+
+
+# ----------------------------------------------------------------------------
+# 6. Advertising and Analytics (optional, can remove or leave fileds empty)
+# ----------------------------------------------------------------------------
 
 # Enter your Google AdSense ad client code (e.g. ca-pub-XXXXXXXXXXXXXXXX) to activate Ads
-google_adsense:            ca-pub-6293532072634065
+google_adsense:
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-# google_analytics:        UA-43339302-11
+google_analytics:
 
-# For newer "GA4" analytics, use the following instead of the "UA" entry above
-# google_analytics_ga4:    G-GABC1DEFG
+# For newer 'GA4' analytics, use the following instead of the 'UA' entry above
+google_analytics_ga4:
+
+
+# ----------------------------------------------------------------------------
+# 7. Domain Verification (optional, can remove or leave fileds empty)
+# ----------------------------------------------------------------------------
+
+# For verifying ownership via Google Search Console
+# (https://cloud.google.com/identity/docs/verify-domain-web)
+google_site_verification:
+
+
+# ----------------------------------------------------------------------------
+# 8. Other Settings (optional, can remove or leave fileds empty)
+# ----------------------------------------------------------------------------
+
+# For showing Twitter cards
+twitter:
+  username: saifkhichi96
+  card: summary
+
 
 #
 # !! You don't need to change any of the configuration flags below !!
 #
+
+collections:
+  projects:
+    output:                true
+    permalink:             /projects/:path/
+  services:
+    output:                true
+    permalink:             /services/:path/
+
+pagination:
+  enabled:                 true
+  per_page:                10
+  permalink:               /:num/
+  sort_reverse:            true
+  sort_field:              'date'
+  title:                   ':title'
+  trail:
+    before:                2
+    after:                 2
 
 permalink:                 /:title/
 
@@ -183,25 +223,6 @@ plugins:
   - jekyll-toc
 
 include:                   ['_pages']
-
-collections:
-  projects:
-    output:                true
-    permalink:             /projects/:path/
-  services:
-    output:                true
-    permalink:             /services/:path/
-
-pagination:
-  enabled:                 true
-  per_page:                10
-  permalink:               /:num/
-  sort_reverse:            true
-  sort_field:              'date'
-  title:                   ':title'
-  trail:
-    before:                2
-    after:                 2
 
 # Exclude these files from your production _site
 exclude:
