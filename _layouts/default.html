@@ -7,6 +7,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.data.manifest.name }} - {{ site.data.manifest.tagline }}</title>
+  {% assign site.description = site.data.manifest.description %}
   {% seo title=false %}
   {% include meta.html %}
 
@@ -98,9 +99,9 @@
                 {% endunless %}
                 <div class="project-tags">
                   {% if post %}
-                  {% assign categories = post.categories %}
+                  {% assign categories = post.categories | split: ', ' %}
                   {% else %}
-                  {% assign categories = page.categories %}
+                  {% assign categories = page.categories | split: ', ' %}
                   {% endif %}
                   {% for category in categories %}
                   <a href="{{site.baseurl}}/categories/#{{category|slugize|replace:",",""}}"><span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span></a>

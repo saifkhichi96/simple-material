@@ -1,6 +1,6 @@
 <div>
   {% for page in site.projects %}
-  {% assign categories = page.categories %}
+  {% assign categories = page.categories | split: ', ' %}
   {% if categories contains 'featured' %}
   <section class="project-summary" style="display: flex;">
     <img style="border: 1px solid var(--mdc-theme-border); border-radius: 8px; margin-right: 8px;" width="64px" height="64px" src="{{ site.baseurl}}{{ page.icon }}" alt="{{ page.title }}" />

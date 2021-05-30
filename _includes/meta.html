@@ -10,7 +10,7 @@
 {% endif %}
 
 {% if page.categories %}
-{% assign keywords = keywords | append: ',' | append: page.categories | join: ',' %}
+{% assign keywords = keywords | append: ',' | append: page.categories %}
 {% endif %}
 
 <meta name="keywords" content="{{ keywords }}">

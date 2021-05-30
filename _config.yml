@@ -19,7 +19,7 @@
 # ----------------------------------------------------------------------------
 
 # Path of your site logo (this is displayed in the top app bar and the footer.)
-logo:
+logo:                      /assets/images/logo.png
 
 # If you're hosting your GitHub pages site at your User repository
 # (http://yourusername.github.io), leave baseurl empty: '', OR if you're hosting
@@ -140,6 +140,10 @@ defaults:
       type: 'posts'
     values:
       toc: true
+  - scope:
+      path: ''
+    values:
+      layout: default
 
 
 # ----------------------------------------------------------------------------
@@ -229,4 +233,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - README.md

@@ -18,6 +18,18 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+h2:not(:first-child) {
+    margin-top: 24px;
+}
+
+h3:not(:first-child) {
+    margin-top: 16px;
+}
+
+h4:not(:first-child) {
+    margin-top: 8px;
+}
+
 h1 {
   margin-bottom: 24px;
 }
