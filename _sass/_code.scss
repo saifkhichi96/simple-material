@@ -4,12 +4,16 @@
  *------------------------------------------------
  */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-@import url('https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/atom-one-dark.min.css');
+@import url('https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/dark.min.css');
+
+@media (prefers-color-scheme: dark) {
+
+}
 
 .code,
 .gist-file,
 code {
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .code,
@@ -21,21 +25,25 @@ code {
 
 .code,
 code {
-  padding: 1px 4px;
+  background-color: var(--mdc-theme-background);
+  padding: 2px 4px;
+  margin: 0 2px;
 }
 
 .gist-data,
 pre code {
-  background-color: var(--mdc-theme-overlay);
+  border-radius: 8px;
+  background-color: var(--mdc-theme-background);
   box-sizing: border-box;
   display: block;
   width: 100%;
   padding: 16px !important;
+  margin-bottom: 16px;
 }
 
 .gist-file,
 .gist-file * {
-  background-color: var(--mdc-theme-surface) !important;
+  background-color: var(--mdc-theme-background) !important;
   border-color: var(--mdc-theme-border) !important;
 }
 
