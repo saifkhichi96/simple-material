@@ -72,19 +72,19 @@ menu_main:
 - title:                   Home
   icon:                    roofing
   url:                     /
-- title:                   About
-  icon:                    face
+- title:                   Getting Started
+  icon:                    room_preferences
   url:                     /about/
-- title:                   Portfolio
+- title:                   Portfolio Demo
   icon:                    cases
-  url:                     /portfolio/
-- title:                   Services
+  url:                     https://www.saifkhichi.com/projects/
+- title:                   Blog Demo
   icon:                    design_services
-  url:                     /services/
+  url:                     https://www.saifkhichi.com/blog/
 - title:                   # empty item adds a small divider in list
 - title:                   Contact
   icon:                    # this item does not have an icon
-  url:                     /contact/
+  url:                     https://www.saifkhichi.com/contact/
 
 # Includes the menu_main links in the footer as well
 navigation_footer:         true
@@ -94,22 +94,17 @@ breadcrubms:               true
 
 # Includes an icon in the footer for each username you enter
 menu_social:
-  dribbble:
   email:                   saifkhichi96@gmail.com
-  facebook:
-  flickr:
   github:                  saifkhichi96
-  instagram:               saifkhichi96
+  goodreads:               26736309
   linkedin:                saifkhichi96
-  pinterest:
   twitter:                 saifkhichi96
   stackoverflow:           4690466
-  youtube:                 /channel/UCj4yPuKHi9pZ9WbKbfh5MEQ
   playconsole:             7722501168179136426
 
 # Includes links to your site's privacy policy and terms of service in the footer
 privacy:                   '/privacy/'
-terms:                     '/tos/'
+terms:                     '/terms/'
 
 
 # ----------------------------------------------------------------------------
