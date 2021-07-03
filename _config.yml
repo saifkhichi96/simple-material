@@ -25,12 +25,12 @@ logo:                      /assets/images/logo.png
 # (http://yourusername.github.io), leave baseurl empty: '', OR if you're hosting
 # it at a Project repo instead (http://yourusername.github.io/repository-name)
 # then set the baseurl to: '/repository-name'
-baseurl:                   ''
+baseurl:                   '/simple-material'
 
 # Your website URL (e.g. http://yourusername.github.io or http://www.domain.com)
 # Used for Sitemap.xml and your RSS feed
-url:                       http://www.saifkhichi.com/simple-material/
-enforce_ssl:               https://www.saifkhichi.com/simple-material/
+url:                       http://www.saifkhichi.com
+enforce_ssl:               https://www.saifkhichi.com
 
 # ----------------------------------------------------------------------------
 # 1. Optional Metadata (optional, can remove or leave fields empty)
@@ -74,7 +74,7 @@ menu_main:
   url:                     /
 - title:                   Getting Started
   icon:                    room_preferences
-  url:                     /about/
+  url:                     /getting-started/
 - title:                   Portfolio Demo
   icon:                    cases
   url:                     https://www.saifkhichi.com/projects/
@@ -139,6 +139,25 @@ defaults:
       path: ''
     values:
       layout: default
+  - scope:
+      path: ''
+    values:
+      drawer: true
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      drawer: false
+  - scope:
+      path: ''
+      type: 'projects'
+    values:
+      drawer: false
+  - scope:
+      path: ''
+      type: 'services'
+    values:
+      drawer: false
 
 
 # ----------------------------------------------------------------------------

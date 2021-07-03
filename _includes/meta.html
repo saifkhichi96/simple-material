@@ -3,24 +3,45 @@
 <meta property="twitter:title" content="{{ page.title }}" />
 {% endif %}
 
-{% assign keywords = {{ site.data.manifest.categories | join: ',' }} %}
+{% assign keywords = '' %}
 
 {% if page.keywords %}
-{% assign keywords = keywords | append: ',' | append: page.keywords %}
+{% assign keywords = keywords | append: page.keywords | append: ', ' %}
 {% endif %}
 
 {% if page.categories %}
-{% assign keywords = keywords | append: ',' | append: page.categories %}
+{% for category in page.categories %}
+{% assign keywords = keywords | append: category | append: ', ' %}
+{% endfor %}
 {% endif %}
+
+{% for category in site.data.manifest.categories %}
+{% assign keywords = keywords | append: category | append: ', ' %}
+{% endfor %}
 
 <meta name="keywords" content="{{ keywords }}">
 <meta property="og:keywords" content="{{ keywords }}" />
 <meta property="twitter:keywords" content="{{ keywords }}" />
 
-{% if page.icon %}
-<meta property="og:image" content="{{ site.baseurl }}{{ page.icon }}" />
-<meta property="twitter:image" content="{{ site.baseurl }}{{ page.icon }}" />
+{% if page.cover %}
+{% if page.cover contains '://' %}
+{% assign cover_url = page.cover %}
 {% else %}
-<meta property="og:image" content="{{ site.baseurl }}{{ site.logo }}" />
-<meta property="twitter:image" content="{{ site.baseurl }}{{ site.logo }}" />
+{% assign cover_url = page.cover | absolute_url %}
+{% endif %}
+<meta property="og:image" content="{{ cover_url }}" />
+<meta property="twitter:image" content="{{ cover_url }}" />
+
+{% elsif page.icon %}
+{% if page.icon contains '://' %}
+{% assign icon_url = page.icon %}
+{% else %}
+{% assign icon_url = page.icon | absolute_url %}
+{% endif %}
+<meta property="og:image" content="{{ icon_url }}" />
+<meta property="twitter:image" content="{{ icon_url }}" />
+
+{% else %}
+<meta property="og:image" content="{{ site.logo | absolute_url }}" />
+<meta property="twitter:image" content="{{ site.logo | absolute_url }}" />
 {% endif %}

@@ -36,14 +36,12 @@ for (var i = 1, len = pages.length; i < len; i++) {
   url += '/' + pages[i]
   var oldHtml = $('.breadcrumbs').html()
   if (i == pages.length - 1) {
-    var newHtml = oldHtml
+    var newHtml = oldHtml + hardcodedCrumbs
   } else {
-    var newHtml = oldHtml + "<li class='breadcrumb-item'><a class='muted' href='" + url + "'>" + page + "</a></li>"
+    var newHtml = oldHtml + "<li class='breadcrumb-item'><a class='muted' href='" + url + "/'>" + page + "</a></li>"
   }
   $('.breadcrumbs').html(newHtml);
 }
-var oldHtml = $('.breadcrumbs').html()
-$('.breadcrumbs').html(oldHtml + hardcodedCrumbs);
 
 $('#last-modified').html(document.lastModified);
 

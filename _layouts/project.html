@@ -15,8 +15,13 @@ layout: default
     <iframe src="https://www.youtube-nocookie.com/embed/{{ page.demo }}?controls=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
   </section>
   {% elsif page.image %}
+  {% if page.image contains '://' %}
+  {% assign image_url = page.image %}
+  {% else %}
+  {% assign image_url = page.image | relative_url %}
+  {% endif %}
   <section>
-    <img class="project-portfolio-img" src="{{ page.image }}" alt="{{ page.title }}" />
+    <img class="project-portfolio-img" src="{{ image_url }}" alt="{{ page.title }}" />
   </section>
   {% endif %}
 
@@ -25,32 +30,28 @@ layout: default
 
 <aside class="col-md-4">
   <!-- Client-->
+  {% if page.client %}
   <section>
     <h2>About the Client</h2>
-    {% if page.client %}
     {{ page.client }}
-    {% else %}
-    <p>This is a personal project.</p>
-    {% endif %}
   </section>
+  {% endif %}
 
   <!-- Source Code -->
+  {% if page.code %}
   <section>
     <h2>Source Code</h2>
-    {% if page.code %}
     <p>The source code of this project is publicly available on <a href="https://github.com/{{ page.code }}">Github</a>{% if page.license %} under {{ page.license }} License{% endif %}.</p>
     <div class="github-card" data-github="{{ page.code }}" data-theme="medium" data-width="100%"></div>
     <script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-    {% else %}
-    <p>Project source code is not publicly available.</p>
-    {% endif %}
   </section>
+  {% endif %}
 
   <!-- Download -->
+  {% if page.download %}
   <section>
     <h2>Get it now</h2>
     <div>
-      {% if page.download %}
       {% if page.download.android %}
       <span>
         <a href='https://play.google.com/store/apps/details?id={{ page.download.android }}&hl=en&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' rel="noopener" target="_blank">
@@ -65,11 +66,9 @@ layout: default
       {% if page.download.gem %}
       <a href='https://badge.fury.io/rb/{{ page.download.gem }}' rel="noopener" target="_blank"><img src='https://badge.fury.io/rb/{{ page.download.gem }}.svg'></a>
       {% endif %}
-      {% else %}
-      <p>No download link.</p>
-      {% endif %}
     </div>
   </section>
+  {% endif %}
 
   {% include widget_feedback.html %}
 </aside>

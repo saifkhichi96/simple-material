@@ -296,6 +296,10 @@ input:focus {
   border: 1px solid var(--mdc-theme-primary);
 }
 
+img {
+  max-width: 100%;
+}
+
 /******************************************************************************/
 /* Main Title Section                                                         */
 /******************************************************************************/
@@ -334,22 +338,9 @@ input:focus {
   margin-bottom: var(--content-padding);
 }
 
-.home_right_img {
-  background-image: url('/assets/images/banner/home-right.png');
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: contain;
-  width: 100%;
-  height: 320px;
-}
-
 @media (max-width: 840px) {
   .about-section {
     margin-top: 0;
-  }
-
-  .about-section .home_right_img {
-    display: none;
   }
 
   .about-section .about-summary {
@@ -712,15 +703,12 @@ input:focus {
   border-radius: 2px 16px 16px 2px;
 }
 
-.project-summary {
-  display: inline-block;
-}
-
 .page-cover {
   position: relative;
   border-radius: 8px;
   width: 100%;
   height: 320px;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   margin-bottom: var(--content-padding);
@@ -737,6 +725,30 @@ input:focus {
   z-index: 1;
 }
 
+.align-bottom {
+  width: 100%;
+  padding: 8px 8px 0 8px;
+  position: absolute;
+  bottom: -32px;
+  left: 0;
+  z-index: 2;
+}
+
+.align-bottom .project-title,
+.align-bottom .project-type,
+.align-bottom .mdc-icon-button {
+  color: #fff !important;
+}
+
+.align-bottom .mdc-icon-button:hover,
+.align-bottom .mdc-icon-button:focus {
+  color: var(--mdc-theme-background) !important;
+}
+
+.project-summary {
+  display: inline-block;
+}
+
 .project-summary>* {
   float: left;
 }
@@ -748,6 +760,15 @@ input:focus {
   width: 80px;
   font-size: 80px;
   line-height: 80px;
+}
+
+.project-logo-featured {
+  border-radius: 8px;
+  margin-right: 12px;
+  height: 64px;
+  width: 64px;
+  font-size: 64px;
+  line-height: 64px;
 }
 
 .project-title {
@@ -825,10 +846,6 @@ pwa-install:hover * {
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-#bmc-wbtn {
-  z-index: 0 !important;
 }
 
 /* Print Styles */

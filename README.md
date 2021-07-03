@@ -1,11 +1,12 @@
 ---
-title: Getting Started with Simple Material
+title: Getting Started
 icon: /assets/images/icons/192.png
 description: Simple Material is a Jekyll-powered theme with a clean design following Google's Material Design guidelines.
 categories: blog-theme, portfolio-theme, material-design, github-pages
 device: Jekyll Theme
-permalink: /about/
+permalink: /getting-started/
 layout: page
+drawer: false
 ---
 
 Simple Material is a Jekyll-powered theme with a clean design following Google's Material Design guidelines.

@@ -1,5 +1,6 @@
 ---
 layout: project
+title: Simple Material
 description: Simple Material is a Jekyll-powered theme with a clean design following Google's Material Design guidelines.
 code: saifkhichi96/simple-material
 license: MIT
@@ -11,14 +12,14 @@ It provides a a beautiful, clean and mobile-first fully-responsive interface for
 
 <div>
   <span>
-    <a class='mdc-button mdc-button--unelevated' href='/about/'>
+    <a class='mdc-button mdc-button--unelevated' href='{{ site.baseurl }}/getting-started/'>
       <span class='mdc-button__ripple'></span>
       <span class='mdc-button__label'>Learn More</span>
     </a>
   </span>
   &nbsp;
   <span>
-    <a class='mdc-button mdc-button--outlined' href='https://saifkhichi96.github.io/simple-material-demo'>
+    <a class='mdc-button mdc-button--outlined' href='https://www.saifkhichi.com/' target='_blank'>
       <span class='mdc-button__ripple'></span>
       <span class='mdc-button__label'>See Demo</span>
     </a>

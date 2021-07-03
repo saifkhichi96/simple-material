@@ -6,12 +6,12 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.data.manifest.name }} - {{ site.data.manifest.tagline }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.data.manifest.name }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}</title>
   {% assign site.description = site.data.manifest.description %}
   {% seo title=false %}
   {% include meta.html %}
 
-  <link rel="alternate" type="application/rss+xml" title="{{ site.data.manifest.name }} - {{ site.data.manifest.tagline }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.data.manifest.name }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}" href="{{ site.baseurl }}/feed.xml" />
 
   <!-- Website icon -->
   <link rel="shortcut icon" href="{{ site.baseurl}}{% if site.data.manifest.icons[0] %}{{ site.data.manifest.icons[0].src }}{% else %}{{ site.logo }}{% endif %}">
@@ -71,40 +71,39 @@
           </section>
           {% endif %}
 
-          <!-- Media -->
-          {% if page.demo %}
-          <section class="embed-container">
-            <iframe src="https://www.youtube-nocookie.com/embed/{{ page.demo }}?controls=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-          </section>
-          {% elsif page.image %}
-          <section>
-            <img class="project-portfolio-img" src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" />
-          </section>
+          <!-- Cover Image -->
+          {% if page.cover %}
+          {% if page.cover contains '://' %}
+          {% assign cover_url = page.cover %}
+          {% else %}
+          {% assign cover_url = page.cover | relative_url %}
+          {% endif %}
+          <div class="page-cover" style="background-image: url('{{ cover_url }}')">
           {% endif %}
 
           <!-- Summary -->
-          <section>
-            <div class="project-summary" style="margin-top: 16px;">
+          <section class="{% if page.cover %}align-bottom{% endif %}">
+            <div class="project-summary">
               {% if page.icon %}
               {% if page.icon contains '.' %}
-              <img class="project-logo" src="{{ site.baseurl}}{{ page.icon }}" alt="{{ page.title }}" />
+              <img class="project-logo" src="{{ site.baseurl}}{{ page.icon }}" alt="{{ page.title | slice: 0 }}" />
               {% else %}
               <span class="material-icons project-logo">{{ page.icon }}</span>
               {% endif %}
               {% endif %}
               <div>
-                <h1 class="project-title">{{ page.title }}</h1>
+                {% if page.title %}<h1 class="project-title">{{ page.title }}</h1>{% endif %}
                 {% unless page.icon %}
                 <span class="project-type">{% if page.date %}{{ page.date | date: "%B %e, %Y" }}{% endif %}</span>
                 {% endunless %}
                 <div class="project-tags">
                   {% if post %}
-                  {% assign categories = post.categories | split: ', ' %}
+                  {% assign categories = post.categories %}
                   {% else %}
-                  {% assign categories = page.categories | split: ', ' %}
+                  {% assign categories = page.categories %}
                   {% endif %}
                   {% for category in categories %}
-                  <a href="{{site.baseurl}}/categories/#{{category|slugize|replace:",",""}}"><span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span></a>
+                  <a href="{{site.baseurl}}/categories/#{{category|slugify|replace:",",""}}"><span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span></a>
                   {% endfor %}
                 </div>
                 {% if page.device %}
@@ -118,10 +117,18 @@
             </div>
             {% endif %}
           </section>
+
+          {% if page.cover %}
+          </div>
+          {% endif %}
         </header>
 
         <!-- Page Content -->
+        {% if page.title %}
+        {{ content | replace_first: "h1", "h1 style='display: none;'" }}
+        {% else %}
         {{ content }}
+        {% endif %}
 
         <div id="status-bar" class="mdc-snackbar">
           <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">

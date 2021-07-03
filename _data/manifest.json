@@ -1,5 +1,7 @@
 {
   "name": "Simple Material",
+  "tagline": "Less is More",
+  "description": "Simple Material is a Jekyll-powered theme with a clean design following Google's Material Design guidelines.",
   "icons": [{
     "src": "/assets/images/icons/192.png",
     "type": "image/png",

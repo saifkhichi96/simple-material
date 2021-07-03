@@ -32,7 +32,17 @@
   </div>
 
   <div class="footer">
-    <p><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" height="32" /></a></p>
+    <p>
+      <a href="{{ site.baseurl }}/">
+       {% if site.logo %}
+       <img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" height="32" />
+       {% elsif site.data.manifest.short_name %}
+       {{ site.data.manifest.short_name }}
+       {% else %}
+       {{ site.data.manifest.name }}
+       {% endif %}
+      </a>
+    </p>
     <div class="text-left">
       {% include nav_social.html %}
     </div>
