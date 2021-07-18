@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "simple-material"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.3-alpha01"
   spec.authors       = ["Saif Khan"]
   spec.email         = ["saifkhcihi96@gmail.com"]
   spec.homepage      = "https://saifkhichi.com/simple-material"
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["plugin_type"] = "theme"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README|sw|manifest)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_pages|_data|_layouts|_includes|_sass|LICENSE|README|sw|manifest|pwabuilder-sw.js)}i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.2"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.15.1"
