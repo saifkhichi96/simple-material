@@ -32,14 +32,19 @@
   </div>
 
   <div class="footer">
+    {% if site.data.manifest.name %}
+    {% assign title = site.data.manifest.name %}
+    {% else %}
+    {% assign title = site.title %}
+    {% endif %}
     <p>
       <a href="{{ site.baseurl }}/">
        {% if site.logo %}
-       <img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" height="32" />
+       <img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ title }}" height="32" />
        {% elsif site.data.manifest.short_name %}
        {{ site.data.manifest.short_name }}
        {% else %}
-       {{ site.data.manifest.name }}
+       {{ title }}
        {% endif %}
       </a>
     </p>
@@ -50,10 +55,10 @@
     <hr class="mdc-list-divider" />
     <span class="copyright">
       <p>
-        &copy; {{ site.data.manifest.name }} {{ site.time | date: '%Y' }}. All rights reserved.<br>
+        Copyright &copy; {{ title }} {{ site.time | date: '%Y' }}. All rights reserved.<br>
         <small>This site uses the <a href="https://github.com/saifkhichi96/simple-material">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
       </p>
-      <a href="{{ site.baseurl }}{{ site.terms }}" class="muted">Terms</a> &nbsp;|&nbsp; <a href="{{ site.baseurl }}{{ site.privacy }}" class="muted">Privacy</a>
+      {% if site.terms %}<a href="{{ site.baseurl }}{{ site.terms }}" class="muted">Terms</a> {% if site.privacy %}&nbsp;|&nbsp;{% endif %}{% endif %} {% if site.privacy %}<a href="{{ site.baseurl }}{{ site.privacy }}" class="muted">Privacy</a>{% endif %}
     </span>
   </div>
 </footer>

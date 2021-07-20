@@ -6,12 +6,20 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.data.manifest.name }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}</title>
+  {% if site.data.manifest.name %}
+  {% assign title = site.data.manifest.name %}
+  {% else %}
+  {% assign title = site.title %}
+  {% endif %}
+
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ title }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}</title>
+  {% if site.data.manifest.description %}
   {% assign site.description = site.data.manifest.description %}
+  {% endif %}
   {% seo title=false %}
   {% include meta.html %}
 
-  <link rel="alternate" type="application/rss+xml" title="{{ site.data.manifest.name }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ title }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}" href="{{ site.baseurl }}/feed.xml" />
 
   <!-- Website icon -->
   <link rel="shortcut icon" href="{{ site.baseurl}}{% if site.data.manifest.icons[0] %}{{ site.data.manifest.icons[0].src }}{% else %}{{ site.logo }}{% endif %}">
