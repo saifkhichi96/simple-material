@@ -1,0 +1,67 @@
+{% assign posts = paginator.posts %}
+{% for post in posts %}
+{% assign categories = post.categories %}
+<section class="post-container">
+  <div class="post">
+    {% if post.cover %}
+    {% assign post_image = post.cover %}
+    {% else %}
+    {% assign post_image = '/assets/images/blog/default.png' %}
+    {% endif %}
+
+    {% if post_image contains '://' %}
+    {% assign image_url = post_image %}
+    {% else %}
+    {% assign image_url = post_image | relative_url %}
+    {% endif %}
+    <div class="post-img" style="background-image: url('{{ image_url }}')"></div>
+    <div class="post-details">
+      <div class="project-tags">
+        {% assign categories = post.categories %}
+        {% for category in categories %}
+        <a href="{{site.baseurl}}/categories/#{{category|slugize|replace:",",""}}"><span class="project-tag"><i class="material-icons">sell</i>{{ category | replace: ",", "" }}</span></a>
+        {% endfor %}
+      </div>
+      <div class="post-date">{{ post.date | date: "%B %e, %Y" }}</div>
+      <h2 class="post-title">{{ post.title }}</h2>
+      <p class="post-excerpt">{{ post.description }}</p>
+      <div class="mdc-touch-target-wrapper">
+        <a class="mdc-button mdc-button--unelevated" href="{{ site.baseurl }}{{ post.url }}">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">Read More</span>
+          <span class="mdc-button__touch"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<!-- pagination -->
+{% if paginator.total_pages > 1 %}
+<ul class="pagination" style="display: flex; width: 100%; justify-content: space-evenly;">
+  <li>
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    {% else %}
+    <span>&laquo; Prev</span>
+    {% endif %}
+  </li>
+
+  {% if paginator.page_trail %}
+    {% for trail in paginator.page_trail %}
+      <li {% if page.url == trail.path %}class="selected"{% endif %}>
+          <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+      </li>
+    {% endfor %}
+  {% endif %}
+
+  <li>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    {% else %}
+    <span>Next &raquo;</span>
+    {% endif %}
+  </li>
+</ul>
+{% endif %}

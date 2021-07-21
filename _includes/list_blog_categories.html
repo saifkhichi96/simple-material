@@ -1,0 +1,26 @@
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+<section class="mdc-card mdc-card--outlined">
+  <details class="mdc-card__content">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <summary>{{ category_name  }}</summary>
+    <i id="#{{ category_name | slugify }}"></i>
+    <a name="{{ category_name | slugify }}"></a>
+
+    <ol class="mdc-list mdc-list--two-line">
+      {% for post in site.categories[category_name] %}
+      <li class="mdc-list-item">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text">
+          <span class="mdc-list-item__primary-text">
+          <a href="{{ site.baseurl }}{{ post.url }}">{% if post.title and post.title != "" %}{{post.title}}{% else %}{{post.excerpt |strip_html}}{%endif%}</a>
+          </span>
+          <span class="mdc-list-item__secondary-text">{{post.excerpt | strip_html | strip | slice: 0, 200 }}...</span>
+        </span>
+      </li>
+      <br>
+      {% endfor %}
+    </ol>
+  </details>
+</section>
+{% endfor %}
