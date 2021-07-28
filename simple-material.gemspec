@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "simple-material"
-  spec.version       = "0.0.3-alpha01"
+  spec.version       = "0.0.3"
   spec.authors       = ["Saif Khan"]
   spec.email         = ["saifkhcihi96@gmail.com"]
   spec.homepage      = "https://saifkhichi.com/simple-material"
