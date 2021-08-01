@@ -7,15 +7,15 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
   {% if site.data.manifest.name %}
-  {% assign title = site.data.manifest.name %}
+    {% assign title = site.data.manifest.name %}
+    {% if page.title and site.data.manifest.short_name %}
+      {% assign title = site.data.manifest.short_name %}
+    {% endif %}
   {% else %}
-  {% assign title = site.title %}
+    {% assign title = site.title %}
   {% endif %}
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ title }}{% unless page.title %}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}{% endunless %}</title>
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ title }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}</title>
-  {% if site.data.manifest.description %}
-  {% assign site.description = site.data.manifest.description %}
-  {% endif %}
   {% seo title=false %}
   {% include meta.html %}
 
