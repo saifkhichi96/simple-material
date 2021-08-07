@@ -6,8 +6,12 @@
     </p>
     {% unless site.github.private %}
     <p>
-      Is there a problem? You can <a href="{{ site.github.issues_url }}" target="
-      ">submit an issue</a> or help us <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}" target="_blank">improve this page</a>.
+      {% for repository in site.github.public_repositories %}
+      {% if repository.name == site.github.repository_name %}
+      Is there a problem? You can <a href="{{ site.github.issues_url }}" target="_blank">submit an issue</a> or help us <a href="{{ site.github.repository_url }}/edit/{{ repository.default_branch }}/{{ page.path }}" target="_blank">improve this page</a>.
+      {% break %}
+      {% endif %}
+      {% endfor %}
     </p>
     {% endunless %}
   </div>
