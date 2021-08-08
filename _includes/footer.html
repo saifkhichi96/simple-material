@@ -40,7 +40,7 @@
     <p>
       <a href="{{ site.baseurl }}/">
        {% if site.logo %}
-       <img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ title }}" height="32" />
+       <img loading="lazy" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ title }}" height="32" />
        {% elsif site.data.manifest.short_name %}
        {{ site.data.manifest.short_name }}
        {% else %}

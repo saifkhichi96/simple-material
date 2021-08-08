@@ -21,7 +21,7 @@
       <span class="mdc-top-app-bar__title">
         <a href="{{ site.baseurl }}/">
           {% if site.logo %}
-          <img src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" height="32" />
+          <img loading="lazy" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" height="32" />
           {% elsif site.data.manifest.short_name %}
           {{ site.data.manifest.short_name }}
           {% else %}
