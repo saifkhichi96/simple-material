@@ -58,7 +58,10 @@
         Copyright &copy; {{ title }} {{ site.time | date: '%Y' }}. All rights reserved.<br>
         <small>This site uses the <a href="https://github.com/saifkhichi96/simple-material">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
       </p>
-      {% if site.terms %}<a href="{{ site.baseurl }}{{ site.terms }}" class="muted">Terms</a> {% if site.privacy %}&nbsp;|&nbsp;{% endif %}{% endif %} {% if site.privacy %}<a href="{{ site.baseurl }}{{ site.privacy }}" class="muted">Privacy</a>{% endif %}
+      {% for item in site.menu_footer %}
+      <a href="{{ site.baseurl }}{{ item.url }}" class="muted">{{ item.title }}</a>
+      {% unless forloop.last == true %}&nbsp;|&nbsp;{% endunless %}
+      {% endfor %}
     </span>
   </div>
 </footer>

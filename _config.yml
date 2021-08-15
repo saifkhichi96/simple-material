@@ -103,8 +103,16 @@ menu_social:
   playconsole:             7722501168179136426
 
 # Includes links to your site's privacy policy and terms of service in the footer
-privacy:                   '/privacy/'
-terms:                     '/terms/'
+menu_footer:
+  cookies:
+    title:                 'Cookies'
+    url:                   '/cookie-policy/'
+  privacy:
+    title:                 'Privacy'
+    url:                   '/privacy/'
+  terms:
+    title:                 'Terms'
+    url:                   '/terms/'
 
 
 # ----------------------------------------------------------------------------
