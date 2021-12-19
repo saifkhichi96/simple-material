@@ -137,36 +137,6 @@ toc:
   item_class: mdc-list-item
   item_prefix: toc-
 
-defaults:
-  - scope:
-      path: ''
-      type: 'posts'
-    values:
-      toc: true
-  - scope:
-      path: ''
-    values:
-      layout: default
-  - scope:
-      path: ''
-    values:
-      drawer: true
-  - scope:
-      path: ''
-      type: 'posts'
-    values:
-      drawer: false
-  - scope:
-      path: ''
-      type: 'projects'
-    values:
-      drawer: false
-  - scope:
-      path: ''
-      type: 'services'
-    values:
-      drawer: false
-
 
 # ----------------------------------------------------------------------------
 # 6. Advertising and Analytics (optional, can remove or leave fileds empty)
@@ -206,12 +176,53 @@ twitter:
 #
 
 collections:
+  docs:
+    output:                true
+    permalink:             /docs/:path/
+  pages:
+    output:                true
+    permalink:             /:title/
   projects:
     output:                true
     permalink:             /projects/:path/
   services:
     output:                true
     permalink:             /services/:path/
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      drawer: true
+      layout: default
+  - scope:
+      path: ''
+      type: 'docs'
+    values:
+      drawer: false
+      layout: doc
+      syntax: true
+      toc: true
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      drawer: false
+      layout: post
+      toc: true
+  - scope:
+      path: ''
+      type: 'projects'
+    values:
+      drawer: false
+      layout: project
+  - scope:
+      path: ''
+      type: 'services'
+    values:
+      drawer: false
+      layout: page
+
 
 pagination:
   enabled:                 true
@@ -248,7 +259,10 @@ plugins:
   - jekyll-sitemap  # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-toc
 
+include:                   ['_docs']
 include:                   ['_pages']
+include:                   ['_projects']
+include:                   ['_services']
 
 # Exclude these files from your production _site
 exclude:

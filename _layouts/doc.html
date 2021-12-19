@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<aside class="col-md-4">
+  <section>
+    <ol>
+      {% assign sorted_docs = site.docs | sort: "url" %}
+      {% for doc in sorted_docs %}
+      <li>
+        <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <script type="text/javascript">
+    findElementById("toc").addClass("mdc-list-item__text");
+
+  </script>
+</aside>
+
+<!-- Page Content -->
+<div class="col-md-8">
+  <!-- Page Content -->
+  {% if page.title %}
+  {{ content | replace_first: "h1", "h1 style='display: none;'" }}
+  {% else %}
+  {{ content }}
+  {% endif %}
+</div>
