@@ -1,0 +1,7 @@
+{% if page.icon %}
+{% if page.icon contains '.' %}
+<img loading="lazy" class="project-logo" src="{{ page.icon | relative_url }}" alt="{{ page.title | slice: 0 }}" />
+{% else %}
+<span class="material-icons project-logo">{{ page.icon }}</span>
+{% endif %}
+{% endif %}

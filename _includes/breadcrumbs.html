@@ -1,0 +1,33 @@
+{% if site.breadcrubms %}
+<!-- Breadcrumbs -->
+<section>
+  <nav class="breadcrumbs" aria-label="breadcrumb">
+    <li class='breadcrumb-item'><a class='muted' href='/'><span class='material-icons' style='font-size: 14pt; bottom: -4px; position: relative;'>home</span></a></li>
+    <li class='breadcrumb-item'><a class='muted' href='{{site.baseurl}}/'>{{site.title}}</a></li>
+
+    {% assign page_url_parts = page.url | split: '/'%}
+    {% assign part_url = '/' %}
+
+    {% for part in page_url_parts %}
+    {% unless part.size == 0 %}
+
+    {% assign part_url = part_url | append: part | append: '/'  %}
+
+    {% assign pages = site.pages | concat: site.posts | concat: site.docs | concat: site.projects | concat: site.services %}
+    {% assign item = pages | where: 'url', part_url | map: 'title' %}
+    {% assign link = pages | where: 'url', part_url | map: 'url' %}
+    <li class='breadcrumb-item {% if forloop.last %}active{% endif %}'>
+      {% unless forloop.last %}
+      <a class='muted' href='{{ link[0] | relative_url }}'>
+        {{ item[0] }}
+      </a>
+      {% else %}
+      {{ page.title }}
+      {% endunless %}
+    </li>
+
+    {% endunless %}
+    {% endfor %}
+  </nav>
+</section>
+{% endif %}
