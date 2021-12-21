@@ -91,14 +91,43 @@
   </main>
 
   <script>
+    $(function() {
+      console.log("Setting up site navigation...");
+      // Instantiate toolbar
+      const topAppBarEl = document.querySelector('.mdc-top-app-bar');
+      const topAppBar = new mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarEl);
+
+      // Instantiate navigation drawer
+      const drawerEl = document.querySelector('.mdc-drawer');
+      const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+
+      // Attach toolbar to navigation drawer
+      topAppBar.setScrollTarget(document.querySelector('.main-content'));
+      topAppBar.listen('MDCTopAppBar:nav', () => {
+        drawer.open = !drawer.open;
+      });
+
+      console.log("Navigation setup complete!");
+    });
+
+    function back() {
+      if (document.referrer.indexOf(location.protocol + "//" + location.host) === 0) {
+        history.back();
+      } else {
+        window.location = "{{ '/' | relative_url }}";
+      }
+    }
+
+    // Update last modified time in footer
+    $('#last-modified').html(document.lastModified);
+
+    // Add material classes to table of contents
     $('#toc .mdc-list-item a').addClass('mdc-list-item__text');
+
   </script>
 
   <!-- user-defined JavaScript -->
   <script async src="{{ site.baseurl }}/assets/scripts/script.js"></script>
-
-  <!-- Other global scripts -->
-  <script async src="{{ site.baseurl }}/assets/scripts/navigation.js"></script>
 </body>
 
 </html>
