@@ -19,13 +19,14 @@
   {% seo title=false %}
   {% include meta.html %}
 
-  <link rel="alternate" type="application/rss+xml" title="{{ title }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ title }}{% if site.data.manifest.tagline %} - {{ site.data.manifest.tagline }}{% endif %}" href="{{ '/feed.xml' | relative_url }}" />
 
   <!-- Website icon -->
-  <link rel="shortcut icon" href="{{ site.baseurl}}{% if site.data.manifest.icons[0] %}{{ site.data.manifest.icons[0].src }}{% else %}{{ site.logo }}{% endif %}">
+  {% capture site_icon %}{% if site.data.manifest.icons[0] %}{{site.data.manifest.icons[0].src}}{% else %}{{site.logo}}{% endif %}{% endcapture %}
+  <link rel="shortcut icon" href="{{ site_icon | relative_url }}">
 
   <!-- Manifest -->
-  <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+  <link rel="manifest" href="{{'/manifest.json' | relative_url}}">
   <meta name="theme-color" content="{{ site.data.manifest.theme_color | default: '#854fee' }}" />
 
   <!-- Material Components for Web -->
@@ -39,8 +40,8 @@
   {% endif %}
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles/app.css" />
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/styles/app.css' | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/styles/style.css' | relative_url }}" />
 
   <!-- Installable PWA -->
   {% if site.installable %}
@@ -100,13 +101,17 @@
 
       // Instantiate navigation drawer
       const drawerEl = document.querySelector('.mdc-drawer');
-      const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+      if (drawerEl) {
+        const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
 
-      // Attach toolbar to navigation drawer
-      topAppBar.setScrollTarget(document.querySelector('.main-content'));
-      topAppBar.listen('MDCTopAppBar:nav', () => {
-        drawer.open = !drawer.open;
-      });
+        // Attach toolbar to navigation drawer
+        topAppBar.setScrollTarget(document.querySelector('.main-content'));
+        topAppBar.listen('MDCTopAppBar:nav', () => {
+          drawer.open = !drawer.open;
+        });
+      } else {
+        console.log("Drawer disabled on this page.");
+      }
 
       console.log("Navigation setup complete!");
     });
@@ -128,7 +133,7 @@
   </script>
 
   <!-- user-defined JavaScript -->
-  <script async src="{{ site.baseurl }}/assets/scripts/script.js"></script>
+  <script async src="{{ '/assets/scripts/script.js' | relative_url }}"></script>
 </body>
 
 </html>

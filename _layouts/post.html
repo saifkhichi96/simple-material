@@ -3,23 +3,30 @@ layout: default
 ---
 
 <style>
-    article img {
-      border-radius: 8px;
-      width: 100%;
-      margin: auto;
-    }
+  article img {
+    border-radius: 8px;
+    width: 100%;
+    margin: auto;
+  }
+
 </style>
 
 <!-- Page Content -->
 <div class="col-md-8">
   {% if page.toc %}
   <section>
-    <h2>Table of Contents</h2>
-    {{ content | toc_only }}
+    <details>
+      <summary>
+        <h2 style="display: inline-block;">Table of Contents</h2>
+      </summary>
+      {{ content | toc_only }}
+    </details>
+    <hr />
   </section>
 
   <script type="text/javascript">
     findElementById("toc").addClass("mdc-list-item__text");
+
   </script>
   {% endif %}
 

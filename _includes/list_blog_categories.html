@@ -13,7 +13,7 @@
         <span class="mdc-list-item__ripple"></span>
         <span class="mdc-list-item__text">
           <span class="mdc-list-item__primary-text">
-          <a href="{{ site.baseurl }}{{ post.url }}">{% if post.title and post.title != "" %}{{post.title}}{% else %}{{post.excerpt |strip_html}}{%endif%}</a>
+            <a href="{{ post.url | relative_url }}">{% if post.title and post.title != "" %}{{post.title}}{% else %}{{post.excerpt |strip_html}}{%endif%}</a>
           </span>
           <span class="mdc-list-item__secondary-text">{{post.excerpt | strip_html | strip | slice: 0, 200 }}...</span>
         </span>

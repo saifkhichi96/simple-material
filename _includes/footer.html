@@ -38,14 +38,14 @@
     {% assign title = site.title %}
     {% endif %}
     <p>
-      <a href="{{ site.baseurl }}/">
-       {% if site.logo %}
-       <img loading="lazy" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ title }}" height="32" />
-       {% elsif site.data.manifest.short_name %}
-       {{ site.data.manifest.short_name }}
-       {% else %}
-       {{ title }}
-       {% endif %}
+      <a href="{{ '/' | relative_url }}">
+        {% if site.logo %}
+        <img loading="lazy" src="{{ site.logo | relative_url }}" alt="{{ title }}" height="32" />
+        {% elsif site.data.manifest.short_name %}
+        {{ site.data.manifest.short_name }}
+        {% else %}
+        {{ title }}
+        {% endif %}
       </a>
     </p>
     <div class="text-left">
@@ -56,10 +56,10 @@
     <span class="copyright">
       <p>
         Copyright &copy; {{ title }} {{ site.time | date: '%Y' }}. All rights reserved.<br>
-        <small>This site uses the <a href="https://github.com/saifkhichi96/simple-material">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
+        <small>This site uses the <a href="https://www.saifkhichi.com/simple-material/">Simple Material</a> theme by <a href="https://github.com/saifkhichi96">saifkhichi96</a></small>
       </p>
       {% for item in site.menu_footer %}
-      <a href="{{ site.baseurl }}{{ item.url }}" class="muted">{{ item.title }}</a>
+      <a href="{{ item.url | relative_url }}" class="muted">{{ item.title }}</a>
       {% unless forloop.last == true %}&nbsp;|&nbsp;{% endunless %}
       {% endfor %}
     </span>

@@ -6,6 +6,7 @@ _site
 
 Gemfile.lock
 *.gem
+vendor
 
 node_modules
 .sass-cache

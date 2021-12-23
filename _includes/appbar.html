@@ -13,15 +13,13 @@
       <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
               aria-label="Open navigation menu">menu</button>
       {% else %}
-      <button class="material-icons mdc-icon-button"
-              aria-label="Go to home page."
-              onclick="window.location.href='{{ site.baseurl }}/'">home</button>
+      <button class="material-icons mdc-icon-button" aria-label="Go to home page." onclick="window.location.href='{{ '/' | relative_url }}'">home</button>
       {% endif %}
       {% endif %}
       <span class="mdc-top-app-bar__title">
-        <a href="{{ site.baseurl }}/">
+        <a href="{{ '/' | relative_url }}">
           {% if site.logo %}
-          <img loading="lazy" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.data.manifest.name }}" height="32" />
+          <img loading="lazy" src="{{ site.logo | relative_url }}" alt="{{ site.data.manifest.name }}" height="32" />
           {% elsif site.data.manifest.short_name %}
           {{ site.data.manifest.short_name }}
           {% else %}
@@ -49,7 +47,7 @@
       {% endif %}
       {% endif %}
       <div class="mdc-touch-target-wrapper">
-        <pwa-install id="a2hs" installbuttontext="Install" manifestpath="{{ site.baseurl }}/manifest.json">
+        <pwa-install id="a2hs" installbuttontext="Install" manifestpath="{{ '/manifest.json' | relative_url }}">
           <span class="mdc-button__ripple"></span>
           <i class="fas fa-arrow-circle-down"></i>
           <span class="mdc-button__touch"></span>

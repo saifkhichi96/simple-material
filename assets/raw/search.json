@@ -5,7 +5,7 @@
     {
 
       "title"    : "{% if post.title != "" %}{{ post.title }}{% else %}{{ post.description | strip_html |  escape | strip }}{%endif%}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "url"      : "{{ post.url | relative_url }}",
       "category" : "{{ post.categories }}",
       "date"     : "{{ post.date | date: "%B %e, %Y" }}"
     } {% unless forloop.last %},{% endunless %}
