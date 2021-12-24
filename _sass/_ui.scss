@@ -1,0 +1,52 @@
+/*
+ *------------------------------------------------
+ * ui elements
+ *------------------------------------------------
+ */
+@import 'variables.scss';
+
+hr {
+  @extend .mdc-list-divider;
+  border-color: $border-color;
+  border-width: 0.5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+hr.small {
+  max-width: 100px
+}
+
+input {
+  @extend .mdc-text-field__input;
+  background-color: var(--mdc-theme-background);
+  border: 1px $border $border-color;
+  border-radius: $border-radius;
+  color: var(--mdc-theme-on-surface);
+  padding: 8px;
+  width: 100%;
+}
+
+input:focus {
+  outline-style: none;
+  border: 1px $border var(--mdc-theme-primary);
+}
+
+button {
+  @extend .mdc-button;
+  text-transform: uppercase;
+}
+
+button.primary,
+.btn-primary {
+  @extend .mdc-button;
+  @extend .mdc-button--unelevated;
+  text-transform: uppercase;
+}
+
+button.outlined,
+.btn-outlined {
+  @extend .mdc-button;
+  @extend .mdc-button--outlined;
+  text-transform: uppercase;
+}

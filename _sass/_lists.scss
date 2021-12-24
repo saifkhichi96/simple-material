@@ -1,0 +1,43 @@
+/*
+ *------------------------------------------------
+ * lists
+ *------------------------------------------------
+ */
+@import 'variables.scss';
+
+ul,
+.list {
+  @extend .mdc-list;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li,
+.list li {
+  @extend .mdc-list-item;
+}
+
+
+
+.mdc-list-item {
+  display: block;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.mdc-list-item__text {
+  white-space: normal;
+  text-align: left;
+  height: auto;
+  max-height: none;
+}
+
+.mdc-list-item__primary-text {
+  white-space: normal;
+}
+
+.mdc-list-item__secondary-text {
+  font-weight: 200;
+  white-space: normal;
+}
