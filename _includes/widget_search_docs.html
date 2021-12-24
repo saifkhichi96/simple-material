@@ -1,0 +1,17 @@
+<section id="search-container" style="position: relative;">
+  <input class="input" type="text" id="search-input" placeholder="Search the documentation..." autocomplete="off" style="position: relative; top: 8px;" />
+  <ul class="mdc-list" style="position: absolute; width: 100%; z-index: 999;" id="results-container">
+  </ul>
+</section>
+
+<script src="{{ '/assets/scripts/simple-jekyll-search.min.js' | relative_url }}" type="text/javascript"></script>
+
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    searchResultTemplate: '<li class="mdc-card mdc-card__content mdc-list-item" style="border-radius: 0px;"><span class="mdc-list-item__ripple"></span><span class="mdc-list-item__text"><a href="{url}">{title}</a></span></li>',
+    json: "{{ '/assets/raw/search_docs.json' | relative_url }}"
+  });
+
+</script>

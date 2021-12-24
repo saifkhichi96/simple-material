@@ -1,7 +1,8 @@
-<div id="search-container">
-  <input class="input" type="text" id="search-input" placeholder="Search for a post..." autocomplete="off">
-  <ul class="mdc-list mdc-list--two-line" id="results-container"></ul>
-</div>
+<section id="search-container" style="position: relative;">
+  <input class="input" type="text" id="search-input" placeholder="Search for a post..." autocomplete="off" style="position: relative; top: 8px;" />
+  <ul class="mdc-list mdc-list--two-line" style="position: absolute; width: 100%; z-index: 999;" id="results-container">
+  </ul>
+</section>
 
 <script src="{{ '/assets/scripts/simple-jekyll-search.min.js' | relative_url }}" type="text/javascript"></script>
 
@@ -9,7 +10,7 @@
   SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
-    searchResultTemplate: '<li class="mdc-list-item"><span class="mdc-list-item__ripple"></span><span class="mdc-list-item__text"><span class="mdc-list-item__primary-text"><a href="{url}">{title}</a></span><span class="mdc-list-item__secondary-text">{date}</span></span></li>',
+    searchResultTemplate: '<li class="mdc-card mdc-card__content mdc-list-item"><span class="mdc-list-item__ripple"></span><span class="mdc-list-item__text"><span class="mdc-list-item__primary-text"><a href="{url}">{title}</a></span><span class="mdc-list-item__secondary-text">{date}</span></span></li>',
     json: "{{ '/assets/raw/search.json' | relative_url }}"
   });
 

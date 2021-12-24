@@ -2,16 +2,23 @@
 layout: default
 ---
 
-<aside class="col-md-4">
+{% include breadcrumbs.html %}
+
+<aside class="col-md-4" style="padding-right: var(--column-spacing);">
   <section>
-    <ol>
+    {% include widget_search_docs.html %}
+
+    <ul class="mdc-list">
       {% assign sorted_docs = site.docs | sort: "url" %}
       {% for doc in sorted_docs %}
-      <li>
-        <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+      <li class="mdc-list-item">
+        <a href="{{ doc.url | relative_url }}">
+          <span class="mdc-list-item__ripple"></span>
+          <span class="mdc-list-item__text">{{ doc.title }}</span>
+        </a>
       </li>
       {% endfor %}
-    </ol>
+    </ul>
   </section>
 
   <script type="text/javascript">
@@ -20,8 +27,25 @@ layout: default
   </script>
 </aside>
 
-<!-- Page Content -->
-<div class="col-md-8">
+<div class="col-md-8" style="padding-right: 0;">
+  <section>
+    <!-- Page Title -->
+    {% if page.title %}<h1 class="project-title">{{ page.title }}</h1>{% endif %}
+
+    {% assign toc = content | toc_only | strip %}
+    {% if toc contains "<li" %}
+
+    <hr />
+    <details open>
+      <summary>
+        <h2>Table of Contents</h2>
+      </summary>
+      {{ toc }}
+    </details>
+    <hr />
+    {% endif %}
+  </section>
+
   <!-- Page Content -->
   {% if page.title %}
   {{ content | replace_first: "h1", "h1 style='display: none;'" }}

@@ -79,13 +79,23 @@
     <!-- Content -->
     <div class="main-content">
       <article class="about-section">
+        {% unless page.collection == 'docs' %}
         {% include page_header.html %}
+        {% endunless %}
 
         <!-- Page Content -->
+        {% if page.collection == 'docs' %}
+
+        {{ content }}
+
+        {% else %}
+
         {% if page.title %}
         {{ content | replace_first: "h1", "h1 style='display: none;'" }}
         {% else %}
         {{ content }}
+        {% endif %}
+
         {% endif %}
       </article>
       {% include footer.html %}
