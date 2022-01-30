@@ -3,7 +3,10 @@
 <section>
   <nav class="breadcrumbs" aria-label="breadcrumb">
     <li class='breadcrumb-item'><a class='muted' href='/'><span class='material-icons' style='font-size: 14pt; bottom: -4px; position: relative;'>home</span></a></li>
-    <li class='breadcrumb-item'><a class='muted' href="{{ '/' | relative_url }}">{{site.title}}</a></li>
+
+    {% if site.baseurl.size > 0 %}
+    <li class='breadcrumb-item'><a class='muted' href="{{ '/' | relative_url }}">{{site.data.manifest.name}}</a></li>
+    {% endif %}
 
     {% assign page_url_parts = page.url | split: '/'%}
     {% assign part_url = '/' %}
