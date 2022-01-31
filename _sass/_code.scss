@@ -10,7 +10,7 @@
 .code,
 .gist-file,
 code {
-  border-radius: $border-radius;
+  border-radius: $card-radius;
 }
 
 .code,
@@ -33,7 +33,7 @@ pre code {
   @extend .mdc-card;
   @extend .mdc-card--outlined;
   @extend .mdc-card__content;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   // background-color: var(--mdc-theme-background);
   margin-bottom: 8px;
   width: 100%;
@@ -58,6 +58,6 @@ pre code {
   @extend .mdc-card;
   @extend .mdc-card--outlined;
   @extend .mdc-card__content;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   margin-bottom: 8px;
 }

@@ -58,6 +58,11 @@
   /* spacing around the footnote */
   --footnote-spacing-x: 24px;
   --footnote-spacing-y: 0px;
+
+  /* corner radius of project icons */
+  --icon-radius: 8px;
+
+  /* corner radius of item cards */
   --card-radius: 4px;
 }
 
@@ -132,7 +137,7 @@ details summary > * {
   border-color: $border-color !important;
   border-style: $border !important;
   border-width: $border-width !important;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
 }
 
 .mdc-card--outlined {
@@ -336,7 +341,7 @@ img {
 
 .experience-item .content .details {
   border: 0.5px solid var(--mdc-theme-border);
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   padding: 16px;
   margin-top: 8px;
 }
@@ -412,12 +417,12 @@ img {
 .portfolio .grid .portfolio-item {
   display: inline-block;
   width: 128px;
-  border-radius: var(--card-radius);
   margin: 8px;
 }
 
 .portfolio .grid .portfolio-item .project-icon {
   background-color: var(--mdc-theme-background);
+  border-radius: var(--icon-radius);
 }
 
 .portfolio .grid .portfolio-item .project-icon .overlay {
@@ -438,7 +443,7 @@ img {
 }
 
 .portfolio .grid .mdc-card {
-  border-radius: 16px;
+  border-radius: var(--card-radius);
 }
 
 .portfolio .grid .portfolio-item .project-details {
@@ -593,7 +598,7 @@ img {
   overflow: hidden;
   max-width: 100%;
   width: 100%;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
 }
 
 .embed-container iframe,
@@ -614,12 +619,12 @@ img {
 
 .highlighted {
   background-color: var(--mdc-theme-overlay);
-  border-radius: $border-radius;
+  border-radius: $card-radius;
 }
 
 .page-cover {
   position: relative;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   width: 100%;
   height: 320px;
   background-size: cover;
@@ -668,7 +673,7 @@ img {
 }
 
 .project-logo {
-  border-radius: $border-radius;
+  border-radius: var(--icon-radius);
   margin-right: 16px;
   height: 80px;
   width: 80px;
@@ -677,7 +682,7 @@ img {
 }
 
 .project-logo-featured {
-  border-radius: $border-radius;
+  border-radius: var(--icon-radius);
   margin-right: 12px;
   height: 64px;
   width: 64px;
@@ -720,7 +725,7 @@ img {
 }
 
 .project-portfolio-img {
-  border-radius: $border-radius;
+  border-radius: var(--icon-radius);
   width: 100%;
 }
 
@@ -844,7 +849,7 @@ ul.downloads {
 /* Blog styles */
 .post-container {
   border: $border-width $border $border-color;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   padding: 8px;
   width: 100%;
   min-height: 240px;
@@ -861,7 +866,7 @@ ul.downloads {
 
 .post-img {
   margin-right: 8px;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   width: 50%;
   min-height: 240px;
   height: 100%;

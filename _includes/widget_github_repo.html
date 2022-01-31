@@ -1,0 +1,29 @@
+<!-- Displays overview of a GitHub repository.
+Usage: include widget_github_repo.html repo="owner/repo"
+ -->
+
+<div class="mdc-card mdc-card--outlined">
+  <div class="mdc-card__content">
+    <!-- Use 'github-cards' to show a repository card -->
+    <div class="github-card" data-github="{{ include.repo }}" data-theme="default" data-width="100%" style="background: var(--mdc-theme-surface); color: var(--mdc-theme-on-surface);"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+
+    <!-- Use 'badgen.net' to show repo badges -->
+    <div>
+      <span>
+        <img loading="lazy" src="//badgen.net/github/license/{{ include.repo }}" alt="License" />
+      </span>
+      <span>
+        <img loading="lazy" src="//badgen.net/github/release/{{ include.repo }}" alt="Last commit" />
+      </span>
+      <span>
+        <img loading="lazy" src="//badgen.net/github/contributors/{{ include.repo }}" alt="Number of contributors" />
+      </span>
+      <span>
+        <a href="//github.com/{{ include.repo }}/issues" rel="noopener" target="_blank">
+          <img loading="lazy" src="//badgen.net/github/open-issues/{{ include.repo }}" alt="Open issues" />
+        </a>
+      </span>
+    </div>
+  </div>
+</div>

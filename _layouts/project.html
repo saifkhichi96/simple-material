@@ -40,10 +40,7 @@ layout: default
   <!-- Source Code -->
   {% if page.code %}
   <section>
-    <h2>Source Code</h2>
-    <p>The source code of this project is publicly available on <a href="https://github.com/{{ page.code }}">Github</a>{% if page.license %} under {{ page.license }} License{% endif %}.</p>
-    <div class="github-card" data-github="{{ page.code }}" data-theme="medium" data-width="100%"></div>
-    <script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    {% include widget_github_repo.html repo=page.code %}
   </section>
   {% endif %}
 
@@ -106,4 +103,5 @@ layout: default
       $(this).find('pre').removeClass();
     });
   })
+
 </script>

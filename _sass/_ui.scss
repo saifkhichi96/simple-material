@@ -21,7 +21,7 @@ input {
   @extend .mdc-text-field__input;
   background-color: var(--mdc-theme-background);
   border: 1px $border $border-color;
-  border-radius: $border-radius;
+  border-radius: $card-radius;
   color: var(--mdc-theme-on-surface);
   padding: 8px;
   width: 100%;
