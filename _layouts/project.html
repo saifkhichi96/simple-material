@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Page Content -->
-<div class="col-md-8">
+<div class="c-major-r">
   <!-- Overview -->
   <section>
     <p>{{ page.description }}</p>
@@ -28,7 +28,7 @@ layout: default
   {{ content }}
 </div>
 
-<aside class="col-md-4">
+<aside class="c-minor">
   <!-- Client-->
   {% if page.client %}
   <section>
@@ -72,14 +72,14 @@ layout: default
 
 <script>
   $(function() {
-    $('article ol').addClass('mdc-list');
-    $('article ol li').each(function(index) {
+    $('.content-body ol').addClass('mdc-list');
+    $('.content-body ol li').each(function(index) {
       $(this).addClass('mdc-list-item');
       $(this).html('<span class="mdc-list-item__text">' + $(this).text() + '</span>');
     });
 
-    $('article ul').addClass('mdc-chip-set');
-    $('article ul li').each(function(index) {
+    $('.content-body ul').addClass('mdc-chip-set');
+    $('.content-body ul li').each(function(index) {
       $(this).addClass('mdc-chip');
 
       var html = "<div class='mdc-chip__ripple'></div><span role='gridcell'>"

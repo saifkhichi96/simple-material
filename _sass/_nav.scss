@@ -12,14 +12,6 @@
   z-index: 999;
 }
 
-/* Print Styles */
-@media print {
-
-  .mdc-top-app-bar {
-    display: none;
-  }
-}
-
 .bottom-navigation {
   background: var(--mdc-theme-surface);
   -moz-box-shadow: 0px -1px 2px var(--mdc-theme-shadow);
@@ -34,7 +26,7 @@
   right: 0;
 }
 
-@media (max-width: 840px) {
+@include for-phone-tablet-only {
   .bottom-navigation {
     display: block;
   }

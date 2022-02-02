@@ -5,32 +5,34 @@
  */
 @import 'variables.scss';
 
-ul,
-.list {
-  @extend .mdc-list;
+.mdc-list {
   margin: 0;
+  margin-bottom: var(--item-spacing-y);
   padding: 0;
-  list-style: none;
 }
-
-ul li,
-.list li {
-  @extend .mdc-list-item;
-}
-
-
 
 .mdc-list-item {
   display: block;
   height: auto !important;
+  margin: 0;
   max-height: none !important;
+  padding: 0;
+  width: 100% !important;
 }
 
 .mdc-list-item__text {
-  white-space: normal;
-  text-align: left;
+  display: block;
+  border-radius: 16px;
   height: auto;
   max-height: none;
+  padding: 4px 8px;
+  white-space: normal;
+  width: 100% !important;
+}
+
+.mdc-list-item__text:hover,
+.mdc-list-item__text:focus {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .mdc-list-item__primary-text {
@@ -40,4 +42,69 @@ ul li,
 .mdc-list-item__secondary-text {
   font-weight: 200;
   white-space: normal;
+}
+
+dl, ol, ul, .list {
+  @extend .mdc-list;
+}
+
+ul li, .list li {
+  @extend .mdc-list-item;
+}
+
+li ol, li ul {
+  margin-left: var(--item-spacing-x);
+  margin-bottom: 0;
+}
+
+dl {
+  display: grid;
+  grid-template: auto / 10em 1fr;
+}
+
+dt {
+  grid-column: 1;
+  font-weight: 500;
+  text-align: right;
+  &::after {
+    content: ":";
+  }
+}
+
+dd {
+  grid-column: 2;
+  margin-bottom: 0;
+  margin-left: calc(var(--item-spacing-x) / 2);
+  blockquote,
+  div,
+  dl,
+  dt,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  ol,
+  p,
+  pre,
+  table,
+  ul,
+  .table-wrapper {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+dd,
+ol,
+ul {
+  dl:first-child {
+    dt:first-child,
+    dd:nth-child(2) {
+      margin-top: 0;
+    }
+  }
 }

@@ -34,8 +34,9 @@
             {% assign categories = page.categories %}
             {% endif %}
             {% for category in categories %}
-            {% assign category_url = "#{{category | slugify | replace: ',', ''}}" %}
-            <a href="/categories/{{category_url}}|relative_url">
+            {% assign category_slug = category | slugify | replace: ',', '' %}
+            {% assign category_url = "/categories/#" | append: category_slug | relative_url %}
+            <a href="{{category_url}}">
               <span class="project-tag">
                 <i class="material-icons">sell</i>{{ category | replace: ",", "" }}
               </span>

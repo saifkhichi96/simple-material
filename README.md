@@ -7,14 +7,13 @@ description: Simple Material is a Jekyll-powered theme with a clean design follo
 categories: [blog-theme, portfolio-theme, material-design, github-pages]
 device: Jekyll Theme
 code: saifkhichi96/simple-material
-license: MIT
 download:
   gem: simple-material
 ---
 
 It provides a a beautiful, clean and mobile-first fully-responsive interface for building your next website with minimal code. This is a plug-and-play Jekyll theme best suited to use on [GitHub Pages](https://pages.github.com) without even setting up a local environment.
 
-[Learn More]({{ '/getting-started/' | relative_url }}){: .mdc-button .mdc-button--unelevated}  &nbsp; [See Demo](https://www.saifkhichi.com/){: .mdc-button .mdc-button--outlined target='_blank'}
+[Learn More]({{ '/getting-started/' | relative_url }}){: .mdc-button .mdc-button--unelevated .with-ripple-effect}  &nbsp; [See Demo](https://www.saifkhichi.com/){: .mdc-button .mdc-button--outlined .with-ripple-effect target='_blank'}
 
 
 ## <i id='emailware'></i>Emailware

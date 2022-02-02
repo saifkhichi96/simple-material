@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-@media (max-width: 768px) {
+@include for-phone-tablet-only {
   .calendar-container {
     margin-right: 0px;
     padding: 0;

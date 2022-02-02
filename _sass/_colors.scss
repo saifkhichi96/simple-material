@@ -13,14 +13,13 @@ body,
   color: var(--mdc-theme-on-surface);
 }
 
-.main-content {
+.page-content {
   background-color: var(--mdc-theme-background);
   color: var(--mdc-theme-on-surface);
 }
 
-.main-content article,
-.main-content aside,
-.main-content .footer {
+.page-content .content-body,
+.page-content .content-footer .footer {
   background-color: var(--mdc-theme-surface);
   color: var(--mdc-theme-on-surface);
 }
@@ -71,7 +70,7 @@ body,
 
 .mdc-card--outlined,
 .mdc-button--outlined {
-  border-color: $border-color !important;
+  border-color: var(--mdc-theme-border) !important;
 }
 
 .mdc-button--outlined .mdc-button__label {
@@ -80,7 +79,7 @@ body,
 
 .mdc-chip {
   background-color: var(--mdc-theme-surface);
-  border: $border-width $border $border-color;
+  border: 1px solid var(--mdc-theme-border);
   color: var(--mdc-theme-on-surface);
 }
 

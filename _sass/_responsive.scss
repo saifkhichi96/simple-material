@@ -1,0 +1,25 @@
+/*
+*------------------------------------------------
+* responsive ui
+*------------------------------------------------
+*/
+// breakpoints
+$device-xs: 320px;
+$device-sm: 480px;
+$device-md: 768px;
+$device-lg: 1024px;
+$device-xl: 1200px;
+@import 'variables.scss';
+
+// mixins
+@mixin for-tiny-phone-only { @media (max-width: $device-xs) { @content; } }
+@mixin for-phone-only { @media (max-width: $device-sm) { @content; } }
+@mixin for-phone-tablet-only { @media (max-width: $device-md) { @content; } }
+@mixin for-tablet-up { @media (min-width: calc($device-sm + 1)) { @content; } }
+@mixin for-laptop-up { @media (min-width: calc($device-md + 1)) { @content; } }
+@mixin for-desktop-up { @media (min-width: calc($device-lg + 1)) { @content; }}
+@mixin for-big-desktop-up { @media (min-width: calc($device-xl + 1)) { @content; } }
+
+// utility classes
+.hide-when-small { display: inherit; }
+@include for-phone-tablet-only { .hide-when-small { display: none; } }

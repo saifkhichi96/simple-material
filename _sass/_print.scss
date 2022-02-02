@@ -1,0 +1,33 @@
+/*
+ *------------------------------------------------
+ * styles for print
+ *------------------------------------------------
+ */
+@import 'variables.scss';
+
+@media print {
+  /**
+   * Do not show the following when printing:
+   * - Top App Bar
+   * - Navigation Drawer
+   * - Bottom Navigation
+   * - breadcrumbs
+   * - Page Footer
+   *
+   * i.e. only show the .content-body
+   */
+  .mdc-top-app-bar,
+  .mdc-drawer,
+  .bottom-navigation,
+  .breadcrumbs,
+  .content-footer {
+    display: none;
+  }
+
+  // Remove unnecessary margins
+  .page-content { margin: 0; padding: 0; }
+  .content-body { margin: 0; padding: 0; }
+
+  // Print a section on a single page.
+  .content-body section { page-break-inside: avoid; }
+}

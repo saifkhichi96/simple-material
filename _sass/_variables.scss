@@ -1,12 +1,20 @@
 /*
- *------------------------------------------------
- * style variables
- *------------------------------------------------
- */
+*------------------------------------------------
+* override this file to provide your own values
+* for any sass variables
+*------------------------------------------------
+*/
+// Responsive breakpoints
+// $device-xs: 320px;
+// $device-sm: 480px;
+// $device-md: 768px;
+// $device-lg: 1024px;
+// $device-xl: 1200px;
 
-$border: solid;
-$border-color: var(--mdc-theme-border);
-$border-width: 1px;
+// Font stacks
+// $head-font: "Lato", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+// $base-font: "Source Sans Pro", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+// $mono-font: "Source Code Pro", "SFMono-Regular", Menlo, Consolas, Monospace;
 
-$card-radius: var(--card-radius);
-$icon-radius: var(--icon-radius);
+// Syntax Highlighting theme (use one of highlightjs theme names)
+$highlightjs_theme: "github-dark";

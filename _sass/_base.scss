@@ -1,0 +1,128 @@
+/*
+ *------------------------------------------------
+ * base theme styles
+ *------------------------------------------------
+ */
+@import 'variables.scss';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.mdc-card {
+  box-shadow: 2px 2px 2px var(--mdc-theme-shadow);
+  border-radius: var(--card-radius);
+}
+
+.mdc-card--outlined {
+  border: 1px solid var(--mdc-theme-border);
+  box-shadow: 0 0 0;
+}
+
+.card--outlined {
+  @extend .mdc-card;
+  @extend .mdc-card--outlined;
+  @extend .mdc-card__content;
+  border-radius: var(--card-radius);
+  margin-bottom: var(--item-spacing-y);
+}
+
+.mdc-card__content {
+  padding: 1rem;
+}
+
+.page-content {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.page-content .content-body {
+  @extend .mdc-card;
+  padding: var(--content-padding);
+  margin-bottom: var(--item-spacing-y);
+  width: 100%;
+}
+
+.page-content .content-body>header {
+  margin-bottom: var(--item-spacing-y);
+}
+
+.page-content .content-body section {
+  margin-top: var(--item-spacing-y);
+  margin-bottom: var(--item-spacing-y);
+}
+
+.page-content .content-footer .footnote {
+  font-size: 0.75rem;
+  padding: var(--footnote-spacing-y) var(--footnote-spacing-x);
+  width: 100%;
+}
+
+.page-content .content-footer {
+  width: 100%;
+}
+
+.page-content .content-footer .footer {
+  font-size: 12pt;
+  padding: 24px;
+  width: 100%;
+}
+
+.page-content .footer ul.sitemap {
+  margin-top: 16px;
+}
+
+.page-content .footer ul.sitemap>li {
+  display: inline;
+  margin-right: var(--item-spacing-x);
+}
+
+@include for-phone-tablet-only {
+  .page-content .footer ul.sitemap>li {
+    display: block;
+    margin-right: 0px;
+    min-height: 48px;
+  }
+}
+
+/* Style the list */
+.breadcrumbs {
+  @extend .hide-when-small;
+  list-style: none;
+}
+
+/* Display list items side by side */
+.breadcrumbs .breadcrumb-item {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumbs .breadcrumb-item+.breadcrumb-item:before {
+  content: "⟩";
+  padding: 0 calc(var(--item-spacing-x) / 2);
+}

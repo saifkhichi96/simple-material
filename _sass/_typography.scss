@@ -3,135 +3,55 @@
  * text styles
  *------------------------------------------------
  */
+@import 'fonts.scss';
 @import 'variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,200&display=swap');
 
-body {
-  font-family: 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 12pt;
-  font-weight: 300;
-  line-height: normal;
+// font-size
+html { font-size: 16px; }
+@include for-phone-tablet-only {
+  html { font-size: 14px; }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
-  margin: 0;
-}
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1.0rem; }
 
-h2:not(:first-child) {
-    margin-top: 24px;
-}
+// font weight
+html { font-weight: 300; }
+h1 { font-weight: 400; }
+h2 { font-weight: 400; }
+h3 { font-weight: 400; }
+h4 { font-weight: 300; }
+h5 { font-weight: 300; }
+h6 { font-weight: 300; }
+blockquote, i, small, .light { font-weight: 200; }
+a, b, strong, sub, sup, .bold { font-weight: 400; }
 
-h3:not(:first-child) {
-    margin-top: 16px;
-}
+// font-face
+html { font-family: $base-font; }
+h1, h2, h3, h4, h5, h6 { font-family: $head-font; }
 
-h4:not(:first-child) {
-    margin-top: 8px;
-}
+// text margins
+h1, h2, h3, h4, h5, h6 { margin: 0; margin-bottom: 0.5rem; }
+h1:not(:first-child), h2:not(:first-child) { margin-top: 1rem; }
+p { margin-bottom: 1rem; }
 
-h1 {
-  margin-bottom: 24px;
-}
+// line heights
+html { line-height: normal; }
 
-h2, h3, h4 {
-  margin-bottom: 4px;
-}
+// more text styles
+a, a:hover, a:focus { text-decoration: none; }
+blockquote { @extend .text-justify; @extend .text-italic; }
 
-h5, h6 {
-  margin-bottom: 0px;
-}
+// titles
+.title { @extend h1;}
+.subtitle { @extend h2; opacity: 0.8; }
 
-h1 {
-  font-size: 22pt;
-}
-
-h2 {
-  font-size: 11pt;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-size: 12pt;
-}
-
-h4 {
-  font-size: 10pt;
-  text-transform: uppercase;
-}
-
-h5, h6 {
-  font-size: 10pt;
-}
-
-h1.subtitle, h2.subtitle, h3.subtitle,
-h4.subtitle, h5.subtitle, h6.subtitle {
-  font-size: 90%;
-  opacity: 0.75;
-  text-transform: uppercase;
-}
-
-b, strong, sub, sup {
-  font-weight: 400;
-  margin: 0;
-}
-
-a, a:hover, a:focus {
-  font-weight: 400;
-  text-decoration: none;
-  margin: 0;
-}
-
-a.light, a.light:hover, a.light:focus {
-  font-weight: 300;
-  margin: 0;
-}
-
-small, i {
-  font-weight: 200;
-  margin: 0;
-}
-
-p {
-  margin: 0px;
-  margin-bottom: 16px;
-}
-
-blockquote {
-  font-weight: 200;
-  font-style: italic;
-  text-align: justify;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.text-title {
-  text-transform: capitalize;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
-.text-left * {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-.text-right * {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-.text-center * {
-  text-align: center;
-}
+// text transforms
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-titlecase { text-transform: capitalize; }
+.text-italic { font-style: italic; }

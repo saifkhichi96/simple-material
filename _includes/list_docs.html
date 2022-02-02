@@ -1,0 +1,26 @@
+{% assign docs = site.docs %}
+{% if docs.size > 0 %}
+<section>
+  {% include widget_search_docs.html %}
+
+  <ul class="mdc-list">
+    {% assign sorted_docs = docs | sort: "url" %}
+    {% for doc in sorted_docs %}
+    <li class="mdc-list-item">
+      <a href="{{ doc.url | relative_url }}">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text">
+          {% assign url_parts = doc.url | split: '/' %}
+          {% for part in url_parts %}
+          {% unless part.size == 0 %}
+          <span style="padding-left: var(--item-spacing-x);"></span>
+          {% endunless %}
+          {% endfor %}
+          {{ doc.title }}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

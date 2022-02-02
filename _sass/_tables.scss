@@ -17,8 +17,8 @@ table {
 
 th,
 td {
-  border-bottom: $border rgba($border-color, 0.5);
-  border-left: $border $border-color;
+  border-bottom: solid rgba(var(--mdc-theme-border), 0.5);
+  border-left: solid var(--mdc-theme-border);
 
   &:first-of-type {
     border-left: 0;
@@ -41,6 +41,6 @@ tbody {
 
 thead {
   th {
-    border-bottom: $border $border-color;
+    border-bottom: solid var(--mdc-theme-border);
   }
 }

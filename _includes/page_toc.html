@@ -1,0 +1,14 @@
+{% if page.toc %}
+{% assign toc = content | toc_only | strip %}
+{% if toc contains "<li" %}
+
+<hr />
+<details open>
+  <summary>
+    <h2 style="padding-left: 0.5rem;">Table of Contents</h2>
+  </summary>
+  {{ toc }}
+</details>
+<hr />
+{% endif %}
+{% endif %}
