@@ -1,6 +1,7 @@
 ---
 title: Sample Post
 cover: https://via.placeholder.com/800x200
+categories: [Tag, Another Tag]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a turpis pulvinar, molestie odio eu, vulputate ante. Vestibulum mattis quam at orci vestibulum scelerisque. Nunc cursus interdum velit, quis laoreet neque ultrices sit amet. Integer magna ante, mollis ut posuere non, placerat et justo.

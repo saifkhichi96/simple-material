@@ -2,8 +2,8 @@
 {% for category in categories %}
 <section class="card--outlined">
   <details>
-    {% capture category_name %}{{ category }}{% endcapture %}
-    <summary>{{ category_name }}</summary>
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <summary>{{ category_name | slugify }}</summary>
     <i id="#{{ category_name | slugify }}"></i>
     <a name="{{ category_name | slugify }}"></a>
 

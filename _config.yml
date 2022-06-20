@@ -104,15 +104,12 @@ menu_social:
 
 # Includes links to your site's privacy policy and terms of service in the footer
 menu_footer:
-- cookies:
-  title:                 'Cookies'
-  url:                   '/cookie-policy/'
-- privacy:
-  title:                 'Privacy'
-  url:                   '/privacy/'
-- terms:
-  title:                 'Terms'
-  url:                   '/terms/'
+- title:                 'Cookies'
+  url:                   '#'
+- title:                 'Privacy'
+  url:                   '#'
+- title:                 'Terms'
+  url:                   '#'
 
 
 # ----------------------------------------------------------------------------
