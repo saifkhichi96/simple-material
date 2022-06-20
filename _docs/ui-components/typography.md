@@ -112,11 +112,11 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 Hyperlinks are rendered using markdown syntax like this:
 
-[Link to another page](another-page)
+[Link to another page](#)
 {: .card--outlined}
 
 ```markdown
-[Link to another page](another-page).
+[Link to another page](#).
 ```
 
 For subscripts and superscripts, inline HTML can be used.
