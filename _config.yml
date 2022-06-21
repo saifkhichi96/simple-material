@@ -259,7 +259,6 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-seo-tag
   - jekyll-sitemap  # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-toc
 
 include:                   ['_docs']
 include:                   ['_pages']

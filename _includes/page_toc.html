@@ -1,14 +1,10 @@
 {% if page.toc %}
-{% assign toc = content | toc_only | strip %}
-{% if toc contains "<li" %}
-
 <hr />
 <details open>
   <summary>
     <h2 style="padding-left: 0.5rem;">Table of Contents</h2>
   </summary>
-  {{ toc }}
+  {% include toc.html html=content class='mdc-list' item_class='mdc-list-item' anchor_class='mdc-list-item__text' %}
 </details>
 <hr />
-{% endif %}
 {% endif %}
