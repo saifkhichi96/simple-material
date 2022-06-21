@@ -15,7 +15,7 @@ It provides a a beautiful, clean and mobile-first fully-responsive interface for
 
 ## <i id='install'></i>Installation
 
-[![Gem Version](https://badge.fury.io/rb/simple-material.svg)](https://badge.fury.io/rb/simple-material)
+[![Gem Version](https://badge.fury.io/rb/simple-material.svg)](https://rubygems.org/gems/simple-material)
 
 ### <i id='install-jekyll'></i>In a Jekyll site
 
