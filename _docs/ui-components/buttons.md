@@ -1,5 +1,6 @@
 ---
 title: Buttons
+description: Buttons allow users to take actions, and make choices, with a single tap. This page lists the Buttons available in the Simple Material Jekyll theme.
 permalink: /getting-started/:path/
 ---
 

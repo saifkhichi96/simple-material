@@ -1,5 +1,6 @@
 ---
-title: Getting Started
+title: Getting Started with Simple Material
+description: Get Started with Simple Material. This page contains step-by-step instructions on how to start using this theme in your Jekyll websites.   
 permalink: /getting-started/
 ---
 

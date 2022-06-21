@@ -1,5 +1,6 @@
 ---
 title: Lists
+description: Lists are continuous, vertical indexes of text. This page explains how to create different lists in the Simple Material Jekyll theme.
 permalink: /getting-started/:path/
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Syntax Highlighting
+description: This page shows how to use syntax highlighting for source code in the Simple Material Jekyll theme.
 permalink: /getting-started/:path/
 ---
 

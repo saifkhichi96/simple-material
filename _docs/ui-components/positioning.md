@@ -1,5 +1,6 @@
 ---
 title: Positioning
+description: This page documents various positioning options available in the Simple Material Jekyll theme, including alignment, margins and spacing, 
 permalink: /getting-started/:path/
 ---
 

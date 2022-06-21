@@ -1,12 +1,13 @@
 ---
 layout: project
 permalink: /
-title: Simple Material
+title: Simple Material Jekyll Theme
 icon: /assets/images/icons/192.png
 description: Simple Material is a Jekyll-powered theme with a clean design following Google's Material Design guidelines.
 categories: [blog-theme, portfolio-theme, material-design, github-pages]
 device: Jekyll Theme
 code: saifkhichi96/simple-material
+drawer: true
 download:
   gem: simple-material
 ---

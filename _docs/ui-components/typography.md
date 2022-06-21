@@ -1,5 +1,6 @@
 ---
 title: Typography
+description: This page documents the typographical elements available in the Simple Material Jekyll theme, including fonts, titles, headings, source code, etc. 
 permalink: /getting-started/:path/
 ---
 
