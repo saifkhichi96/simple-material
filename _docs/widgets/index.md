@@ -1,5 +1,6 @@
 ---
 title: Widgets
+description: This page documents the widgets available in the Simple Material Jekyll theme. Widgets are some reusable views which can be customized.
 permalink: /getting-started/widgets/
 ---
 

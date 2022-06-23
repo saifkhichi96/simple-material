@@ -1,12 +1,8 @@
 ---
 title: Typography
-description: This page documents the typographical elements available in the Simple Material Jekyll theme, including fonts, titles, headings, source code, etc. 
+description: This page documents the typographical elements available in the Simple Material Jekyll theme, including fonts, titles, headings, source code, etc.
 permalink: /getting-started/:path/
 ---
-
-
-# Typography
-{: no_toc}
 
 
 ## Font stack
@@ -71,7 +67,6 @@ This can be overridden through the variable `$mono-font`.
 Headings are rendered like this:
 
 <div class="card--outlined">
-<h1 class="no_toc">Heading 1</h1>
 <h2 class="no_toc">Heading 2</h2>
 <h3 class="no_toc">Heading 3</h3>
 <h4 class="no_toc">Heading 4</h4>
@@ -79,7 +74,6 @@ Headings are rendered like this:
 <h6 class="no_toc">Heading 6</h6>
 </div>
 ```markdown
-# Heading 1
 ## Heading 2
 ### Heading 3
 #### Heading 4
@@ -93,11 +87,11 @@ Headings are rendered like this:
 
 Default body text is rendered like this:
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 {: .card--outlined}
 
 ```markdown
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ```
 
 Text can also be rendered **bold**, _italic_, or ~~strikethrough~~ using only Markdown.

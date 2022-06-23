@@ -1,5 +1,6 @@
 ---
 title: UI Components
+description: Documentation of the UI components included in the Simple Material Jekyll theme, such as buttons, lists, layouts, widgets, fonts, etc.
 permalink: /getting-started/ui-components/
 ---
 

@@ -5,9 +5,11 @@ permalink: /getting-started/
 ---
 
 
-Simple Material is a Jekyll-powered theme with a clean design following Google's Material Design guidelines.
+Google's Material Design is a design language that uses simple geometric shapes to create an interface that is both attractive and easy to use. Simple Material is a Jekyll theme that follows these guidelines, making it the perfect choice for your next website or blog project
 
-It provides a a beautiful, clean and mobile-first fully-responsive interface for building your next website with minimal code. This is a plug-and-play Jekyll theme best suited to use on [GitHub Pages](https://pages.github.com) without even setting up a local environment.
+ The Simple Material theme has a clean, minimalist design that will make your content stand out. It provides a a beautiful, clean and mobile-first fully-responsive interface for building your next website with minimal code.
+
+ This is a plug-and-play Jekyll theme best suited to use on [GitHub Pages](https://pages.github.com) without even setting up a local environment. It's the perfect choice for any website or blog project!
 
 ## <i id="features"></i>Key Features
 
